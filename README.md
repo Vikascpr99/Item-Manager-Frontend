@@ -44,6 +44,21 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ![image](https://github.com/user-attachments/assets/bc00b9f7-0bd3-4fc5-b1ca-c0116086da6f)
 
+### Watch the details of the Item
+
+![image](https://github.com/user-attachments/assets/252e3fe9-7483-4d99-a876-f7ad748011c2)
+
+### Delete the Item
+
+![image](https://github.com/user-attachments/assets/3c0809fe-b956-4fea-80c6-a28e224c08b6)
+
+#### After Deletion 
+
+![image](https://github.com/user-attachments/assets/96dd6d95-75de-4080-9a4e-e053c0102ac4)
+
+
+
+
 
 
 
