@@ -22,6 +22,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Category</label>
+                            <input type="text"
+                                 v-model="item.category"
+                                class="form-control"
+                                id="itemcategory"
+                                name="itemcategory"
+                            />
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Description</label>
                             <input type="text"
                                  v-model="item.description"
@@ -59,6 +69,7 @@
             return{
                 item:{
                     title:'',
+                    category:'',
                     description:''
                 },
                 isSubmitting: false

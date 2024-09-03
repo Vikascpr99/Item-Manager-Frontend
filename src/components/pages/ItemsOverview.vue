@@ -2,6 +2,15 @@
     <layout-container>
         <div class="container">
             <h2 class="text-center mt-5 mb-3">Items Overview</h2>
+            <nav class="navbar navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand"></a>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search By Title" aria-label="Search">
+                        <button @click="getItemsByTitle(title)" class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
             <div class="card-header">
                 <router-link to= "/create" class = "btn btn-outline-primary">
                     CreateItem
@@ -13,6 +22,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Category</th>
                             <th>Description</th>
                             <th width="250px">Action</th>
                         </tr>
@@ -21,6 +31,7 @@
                     <tbody>
                         <tr v-for = "item in items" :key="item._id">
                             <td>{{ item.title }}</td>
+                            <td>{{ item.category }}</td>
                             <td>{{ item.description }}</td>
                             <td>
                                 <router-link :to="`/edit/${item._id}`" class="btn btn-outline-info mx-1">
@@ -60,7 +71,23 @@
         created(){
             this.getAllItems();
         },
+        findItemsByTitle(title){
+            this.getItemsByTitle(title);
+
+        },
         methods:{
+            getItemsByTitle(title){
+                this.isSubmitting = true;
+                axios.get(`/api/search-items-by-title?title=${title}`)
+                .then(response => {
+                    this.items = response.data;
+                    console.log(this.items);
+                    return response;
+                })
+                .catch(error => {
+                    return error;
+                });
+            },
             getAllItems(){
                 console.log(axios.defaults.baseURL);
                 axios.get('/api/items')
