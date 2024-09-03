@@ -12,6 +12,8 @@
                 <div class="card-body">
                     <b class="text-muted">Title: </b>
                     <p>{{ item.title }}</p>
+                    <b class="text-muted">Category: </b>
+                    <p>{{ item.title }}</p>
                     <b class="text-muted">Description: </b>
                     <p>{{ item.description }}</p>
                     <b class="text-muted">Created At: </b>
@@ -38,6 +40,7 @@
             return{
                 item:{
                     title :'',
+                    category :'',
                     description: '',
                     createdAt: '',
                     updatedAt: ''

@@ -22,6 +22,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Category</label>
+                            <input type="text"
+                                 v-model="item.category"
+                                class="form-control"
+                                id="itemCategory"
+                                name="itemCategory"
+                            />
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Description</label>
                             <input type="text"
                                  v-model="item.description"
@@ -59,6 +69,7 @@ import Swal from 'sweetalert2';
             return{
                 item:{
                     title:'',
+                    category:'',
                     description:''
                 },
                 isSubmitting: false
@@ -77,6 +88,7 @@ import Swal from 'sweetalert2';
                     });
                     this.isSubmitting = false;
                     this.item.title = '';
+                    this.item.category = '';
                     this.item.description='';
                     return response;
                 })
